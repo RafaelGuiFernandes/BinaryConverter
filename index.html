@@ -51,20 +51,24 @@
             </div>
             <!-- Converter Menu -->
             <div class="card col-4 mx-1 col-md-2"><!-- Example single danger button -->
-                <div class="btn-group">
-                  <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Número
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Binario para decimal</a></li>
-                    <li><a class="dropdown-item" href="#">Binario para Octal</a></li>
-                    <li><a class="dropdown-item" href="#">Hexadecimal para Octal</a></li>
-                    <li><a class="dropdown-item" href="#">Hexadecimal para Decimal</a></li>
-                    <li><a class="dropdown-item" href="#">Octal para decimal</a></li>
-                  </ul>
-                </div>
-            </div>
-        </div>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          Números
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body"></div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Decimal para Binário</li>
+                            <li class="list-group-item">Binário para Decimal</li>
+                            <li class="list-group-item">Decimal para Hexadecimal</li>
+                            <li class="list-group-item">Hexadecimal para Decimal</li>
+                            <li class="list-group-item">Decimal para Octal</li>
+                          </ul>
+                      </div>
+                    </div>
     </main>
     <footer class="p-3 bg-dark text-white text-center">
         <h6>Copyright 2023 - Todos os Direitos Reservados </h6>
