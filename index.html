@@ -24,35 +24,38 @@
     <main class="container-fluid">
         <!-- Titulo -->
         <div class="row justify-content-center">
-            <div class="row p-4 justify-content-center">
-                <h2>Binario para Decimal</h2>
+            <div class="row p-4 text-center">
+                <h4>Binario para Decimal</h4>
             </div>
             <!-- Converter area -->
-            <div class=" card col-7 col-md-7">
-                <div class="container">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group text-dark">
-                          <label for="input1">Insira binário:</label>
-                          <input type="number" class="form-control" id="input1" placeholder="(Binário)">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group text-dark">
-                          <label for="input2">Resultado:</label>
-                          <input type="number" class="form-control" id="input2" placeholder="" readonly >
-                        </div>
-                      </div>
+            <div class="col-6 col-md-4">
+                <div class="form-group text-dark">
+                    <label for="input1">Insira binário:</label>
+                    <div class="row gap-3">
+                        <input type="text" class="col box-item form-control" id="input" placeholder="(Binário)">
+                        <button type="submit" class="col col-md-2 box-item  btn">Converter</button>
                     </div>
-                    <button type="submit" class="btn btn-success">Converter</button>
-                  </div>
-                  
-                
+                </div>
+                <div class="form-group text-dark">
+                    <label for="input2">Resultado:</label>
+                    <div class="row gap-3">
+                        <input type="text" class="col box-item form-control" id="input2" placeholder="" readonly >
+                    </div>
+                </div>
+                <div class="row py-2">
+                    <button type="submit" class="btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                            <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+                            </svg>
+                            Trocar conversão: <span id="invertConversion">Binário para Decimal</span>
+                    </button>
+                </div>
             </div>
             <!-- Converter Menu -->
-            <div class="card col-4 mx-1 col-md-2"><!-- Example single danger button -->
+            <div class="card col-8 mx-3 col-md-2"><!-- Example single danger button -->
                 <div class="btn-group">
-                  <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     Número
                   </button>
                   <ul class="dropdown-menu">

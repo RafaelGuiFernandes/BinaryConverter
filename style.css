@@ -1,0 +1,13 @@
+.box-item{
+    height: 32px !important;
+    border: solid 1px black;
+    border-radius: 0px;
+    width: inherit;
+}
+.btn{
+    border: solid 2px black;
+    border-radius: 0px;
+    text-align: center !important;
+    padding: 0px 6px;
+    align-self: flex-end;
+}
