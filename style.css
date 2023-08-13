@@ -11,3 +11,12 @@
     padding: 0px 6px;
     align-self: flex-end;
 }
+.list-group-flush{
+    font-size: 12px;
+}
+.collapsed{
+    font-size: 14px;
+}
+.accordion-button{
+    font-size: 14px;
+}
