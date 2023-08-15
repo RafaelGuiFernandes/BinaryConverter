@@ -61,7 +61,6 @@ function DecimalToOctal(value) {
     return octal;
 }
 //
-<<<<<<< HEAD
 function HexadecimalToOctal(value){
     let octal = "";
     let remainder;
@@ -89,7 +88,6 @@ function OctalToHexadecimal(value){
     }
     return hexadecimal;
 }
-=======
 function OctalToDecimal(value) {
     let decimal = 0;
     let power = 1;
@@ -103,4 +101,3 @@ function OctalToDecimal(value) {
     return decimal;
 }
 //
->>>>>>> d8ecbfec3a739fdae4c542a98f4f55ca4f41e225
