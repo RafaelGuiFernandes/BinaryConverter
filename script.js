@@ -58,3 +58,17 @@ function DecimalToOctal(value) {
     }
     return octal;
 }
+//
+function OctalToDecimal(value) {
+    let decimal = 0;
+    let power = 1;
+    for (let i = value.length - 1; i >= 0; i--) {
+        let digit = value[i];
+        if (digit >= '0' && digit <= '7') {
+            decimal += (digit - '0') * power;
+        }
+        power *= 8;
+    }
+    return decimal;
+}
+//
