@@ -1,5 +1,5 @@
 var type = 'bd';
-
+//
 function BinaryToDecimal( value ){
     let decimal = 0;
     let power = 1;
@@ -10,4 +10,13 @@ function BinaryToDecimal( value ){
       power *= 2;
     }
     return decimal;
+}
+//
+function DecimalToBinary(value) {
+    let binary = "";
+    while (value > 0) {
+        binary = (value % 2) + binary;
+        value = Math.floor(value / 2);
+    }
+    return binary;
 }
