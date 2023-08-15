@@ -24,7 +24,7 @@ function DecimalToBinary(value) {
 function decimalToHexadecimal( value ){
     let hexadecimal = "";
     let remainder;
-    while (decimal > 0) {
+    while (value > 0) {
       remainder = value % 16;
       hexadecimal = remainder.toString(16) + hexadecimal;
       value = Math.floor(value / 16);
@@ -38,6 +38,7 @@ function decimalToHexadecimal( value ){
 function HexadecimalToDecimal(value) {
     let decimal = 0;
     let power = 1;
+    value = value.toString();
     for (let i = value.length - 1; i >= 0; i--) {
         let digit = value[i];
         if (digit >= '0' && digit <= '9') {
@@ -51,6 +52,7 @@ function HexadecimalToDecimal(value) {
     }
     return decimal;
 }
+
 //
 function DecimalToOctal(value) {
     let octal = "";
@@ -88,9 +90,11 @@ function OctalToHexadecimal(value){
     }
     return hexadecimal;
 }
+//
 function OctalToDecimal(value) {
     let decimal = 0;
     let power = 1;
+    value = value.toString();
     for (let i = value.length - 1; i >= 0; i--) {
         let digit = value[i];
         if (digit >= '0' && digit <= '7') {
@@ -100,4 +104,5 @@ function OctalToDecimal(value) {
     }
     return decimal;
 }
+
 //
