@@ -11,7 +11,6 @@ function BinaryToDecimal( value ){
     }
     return decimal;
 }
-//
 function DecimalToBinary(value) {
     let binary = "";
     while (value > 0) {
@@ -19,4 +18,17 @@ function DecimalToBinary(value) {
         value = Math.floor(value / 2);
     }
     return binary;
+}
+function decimalToHexadecimal( value ){
+    let hexadecimal = "";
+    let remainder;
+    while (decimal > 0) {
+      remainder = value % 16;
+      hexadecimal = remainder.toString(16) + hexadecimal;
+      value = Math.floor(value / 16);
+    }
+    if (hexadecimal.length === 0) {
+      hexadecimal = "0";
+    }
+    return hexadecimal;
 }
