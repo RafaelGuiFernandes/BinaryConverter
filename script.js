@@ -105,4 +105,25 @@ function OctalToDecimal(value) {
     return decimal;
 }
 
-//
+// listen for DOM content loaded
+document.addEventListener("DOMContentLoaded" , () =>{
+  const submitBtn = document.getElementById("submit");
+
+  // listen for user submit
+  submitBtn.addEventListener('click' , () => {
+    switch( type ){
+      case "bd":
+        console.log("binario para decimal");
+      break;
+      case "db":
+        console.log("decimal para binario");
+      break;
+      case "dh":
+        console.log("decimal para hexadecimal");
+      break;
+      case "hd":
+        console.log("hexadecimal para decimal");
+      break;
+    }
+  });
+});
