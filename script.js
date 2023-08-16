@@ -108,12 +108,14 @@ function OctalToDecimal(value) {
 // listen for DOM content loaded
 document.addEventListener("DOMContentLoaded" , () =>{
   const submitBtn = document.getElementById("submit");
+  const input= document.getElementById("input")
 
   // listen for user submit
+  const value= input.value
   submitBtn.addEventListener('click' , () => {
     switch( type ){
       case "bd":
-        console.log("binario para decimal");
+        console.log( DecimalToBinary(value));
       break;
       case "db":
         console.log("decimal para binario");
