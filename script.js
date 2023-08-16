@@ -1,16 +1,19 @@
 var type = 'bd';
 //
-function BinaryToDecimal( value ){
-    let decimal = 0;
-    let power = 1;
-    for (let i = value.length - 1; i >= 0; i--) {
-      if (binary[i] === "1") {
-        decimal += power;
+function BinaryToDecimal(value) {
+  let decimal = 0;
+  let power = 1;
+  while (value > 0) {
+      let remainder = value % 10;
+      if (remainder === 1) {
+          decimal += power;
       }
       power *= 2;
-    }
-    return decimal;
+      value = Math.floor(value / 10);
+  }
+  return decimal;
 }
+
 //
 function DecimalToBinary(value) {
     let binary = "";
@@ -111,8 +114,8 @@ document.addEventListener("DOMContentLoaded" , () =>{
   const input= document.getElementById("input")
 
   // listen for user submit
-  const value= input.value
   submitBtn.addEventListener('click' , () => {
+    const value= input.value
     switch( type ){
       case "bd":
         console.log( DecimalToBinary(value));
