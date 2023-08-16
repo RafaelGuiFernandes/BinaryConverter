@@ -112,22 +112,29 @@ function OctalToDecimal(value) {
 document.addEventListener("DOMContentLoaded" , () =>{
   const submitBtn = document.getElementById("submit");
   const input= document.getElementById("input")
+  const output= document.getElementById("output")
 
   // listen for user submit
   submitBtn.addEventListener('click' , () => {
     const value= input.value
     switch( type ){
       case "bd":
-        console.log( DecimalToBinary(value));
+        output.value=BinaryToDecimal(value)
       break;
       case "db":
-        console.log("decimal para binario");
+        output.value=DecimalToBinary(value)
       break;
       case "dh":
-        console.log("decimal para hexadecimal");
+        output.value=decimalToHexadecimal(value);
       break;
       case "hd":
-        console.log("hexadecimal para decimal");
+        output.value=HexadecimalToDecimal(value);
+      break;
+      case "do":
+        output.value=DecimalToOctal(value);
+      break;
+      case "oh":
+        output.value=OctalToHexadecimal(value);
       break;
     }
   });
