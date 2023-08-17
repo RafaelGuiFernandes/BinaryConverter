@@ -20,6 +20,8 @@
 .accordion-button{
     font-size: 14px;
 }
-.list-group-item:hover {
-    background-color: #ccc;
+.list-group-item:hover,
+.list-group-item.active {
+    background-color: #00c2e4;
 }
+

@@ -109,33 +109,62 @@ function OctalToDecimal(value) {
 }
 
 // listen for DOM content loaded
-document.addEventListener("DOMContentLoaded" , () =>{
+document.addEventListener("DOMContentLoaded", () => {
   const submitBtn = document.getElementById("submit");
-  const input= document.getElementById("input")
-  const output= document.getElementById("output")
+  const input = document.getElementById("input");
+  const output = document.getElementById("output");
 
   // listen for user submit
-  submitBtn.addEventListener('click' , () => {
-    const value= input.value
-    switch( type ){
-      case "bd":
-        output.value=BinaryToDecimal(value)
-      break;
-      case "db":
-        output.value=DecimalToBinary(value)
-      break;
-      case "dh":
-        output.value=decimalToHexadecimal(value);
-      break;
-      case "hd":
-        output.value=HexadecimalToDecimal(value);
-      break;
-      case "do":
-        output.value=DecimalToOctal(value);
-      break;
-      case "oh":
-        output.value=OctalToHexadecimal(value);
-      break;
+  submitBtn.addEventListener('click', () => {
+    processInput();
+  });
+
+  // listen for enter key press
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      processInput();
     }
   });
+
+  function processInput() {
+    const value = input.value;
+    switch (type) {
+      case "bd":
+        output.value = BinaryToDecimal(value);
+        break;
+      case "db":
+        output.value = DecimalToBinary(value);
+        break;
+      case "dh":
+        output.value = decimalToHexadecimal(value);
+        break;
+      case "hd":
+        output.value = HexadecimalToDecimal(value);
+        break;
+      case "do":
+        output.value = DecimalToOctal(value);
+        break;
+      case "oh":
+        output.value = OctalToHexadecimal(value);
+        break;
+    }
+  }
 });
+
+//manter click 
+document.addEventListener('DOMContentLoaded', function() {
+  var listItems = document.querySelectorAll('.list-group-item');
+
+  listItems.forEach(function(item) {
+      item.addEventListener('click', function() {
+          // Remove a classe 'active' de todos os elementos
+          listItems.forEach(function(el) {
+              el.classList.remove('active');
+          });
+          // Adicione a classe 'active' ao elemento clicado
+          this.classList.add('active');
+      });
+  });
+});
+//
+
