@@ -1,4 +1,4 @@
-var type = 'bd';
+var type = 1;
 //
 function BinaryToDecimal(value) {
   let decimal = 0;
@@ -108,6 +108,10 @@ function OctalToDecimal(value) {
     return decimal;
 }
 
+function updateTypeValue( value ){
+  type = value;
+}
+
 // listen for DOM content loaded
 document.addEventListener("DOMContentLoaded", () => {
   const submitBtn = document.getElementById("submit");
@@ -129,29 +133,35 @@ document.addEventListener("DOMContentLoaded", () => {
   function processInput() {
     const value = input.value;
     switch (type) {
-      case "bd":
-        output.value = BinaryToDecimal(value);
-        break;
-      case "db":
+      case 1:
         output.value = DecimalToBinary(value);
         break;
-      case "dh":
+      case 2:
+        output.value = BinaryToDecimal(value);
+        break;
+      case 3:
         output.value = decimalToHexadecimal(value);
         break;
-      case "hd":
+      case 4:
         output.value = HexadecimalToDecimal(value);
         break;
-      case "do":
+      case 5:
         output.value = DecimalToOctal(value);
         break;
-      case "oh":
+      case 6:
+         output.value = OctalToDecimal(value);
+        break;
+      case 7:
+        output.value = HexadecimalToOctal(value);
+        break;
+      case 8:
         output.value = OctalToHexadecimal(value);
         break;
     }
   }
 });
 
-//manter click 
+//manter click
 document.addEventListener('DOMContentLoaded', function() {
   var listItems = document.querySelectorAll('.list-group-item');
 
@@ -163,6 +173,10 @@ document.addEventListener('DOMContentLoaded', function() {
           });
           // Adicione a classe 'active' ao elemento clicado
           this.classList.add('active');
+
+          // atualizar tipo
+          console.log( item.value );
+          updateTypeValue(item.value);
       });
   });
 });
