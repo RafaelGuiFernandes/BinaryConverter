@@ -210,5 +210,11 @@ document.addEventListener("DOMContentLoaded", () => {
       processInput();
     }
   });
+
+  // listen for swap conversion type
+  document.getElementById('swap').addEventListener('click',() => {
+    type = type %2 == 0 ? type - 1 : type + 1;
+    updateTypeValue( type );
+  })
 });
 
