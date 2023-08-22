@@ -25,19 +25,19 @@
         <!-- Titulo -->
         <div class="row justify-content-center">
             <div class="row p-4 text-center">
-                <h4>Binario para Decimal</h4>
+                <h4 > <span id="t1"></span> para <span id="t2"></span></h4>
             </div>
             <!-- Converter area -->
             <div class="col-6 col-md-4">
                 <div class="form-group text-dark">
-                    <label for="input1">Insira binário:</label>
+                    <label for="input1">Insira <span id="t1"></span>:</label>
                     <div class="row gap-3">
                         <input type="text" class="col box-item form-control" id="input" placeholder="(Binário)">
                         <button type="submit" id="submit" class="col col-md-2 box-item  btn">Converter</button>
                     </div>
                 </div>
                 <div class="form-group text-dark">
-                    <label for="input2">Resultado:</label>
+                    <label for="input2">Resultado em <span id="t2"></span>:</label>
                     <div class="row gap-3">
                         <input type="text" class="col box-item form-control" id="output" placeholder="" readonly >
                     </div>
@@ -48,7 +48,7 @@
                             <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
                             <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
                             </svg>
-                            Trocar conversão: <span id="invertConversion">Binário para Decimal</span>
+                            Trocar conversão: <span id="invertConversion"><span id="t1"></span> para <span id="t2"></span></span>
                     </button>
                 </div>
             </div>

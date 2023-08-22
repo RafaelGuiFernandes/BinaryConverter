@@ -1,4 +1,5 @@
 var type = 1;
+
 //
 function BinaryToDecimal(value) {
   let decimal = 0;
@@ -13,8 +14,6 @@ function BinaryToDecimal(value) {
   }
   return decimal;
 }
-
-//
 function DecimalToBinary(value) {
     let binary = "";
     while (value > 0) {
@@ -23,7 +22,6 @@ function DecimalToBinary(value) {
     }
     return binary;
 }
-//
 function decimalToHexadecimal( value ){
     let hexadecimal = "";
     let remainder;
@@ -37,7 +35,6 @@ function decimalToHexadecimal( value ){
     }
     return hexadecimal;
 }
-//
 function HexadecimalToDecimal(value) {
     let decimal = 0;
     let power = 1;
@@ -55,8 +52,6 @@ function HexadecimalToDecimal(value) {
     }
     return decimal;
 }
-
-//
 function DecimalToOctal(value) {
     let octal = "";
     while (value > 0) {
@@ -65,7 +60,6 @@ function DecimalToOctal(value) {
     }
     return octal;
 }
-//
 function HexadecimalToOctal(value){
     let octal = "";
     let remainder;
@@ -79,7 +73,6 @@ function HexadecimalToOctal(value){
     }
     return octal;
 }
-//
 function OctalToHexadecimal(value){
     let hexadecimal = "";
     let remainder;
@@ -93,7 +86,6 @@ function OctalToHexadecimal(value){
     }
     return hexadecimal;
 }
-//
 function OctalToDecimal(value) {
     let decimal = 0;
     let power = 1;
@@ -108,63 +100,89 @@ function OctalToDecimal(value) {
     return decimal;
 }
 
+// Update Conversion type
+function updateInfo( type1 , type2 ){
+  document.getElementById('input').placeholder = "(" + type1 + ")";
+  document.querySelectorAll('#t1').forEach((el) => {
+    el.textContent = type1;
+  });
+  document.querySelectorAll('#t2').forEach((el) => {
+    el.textContent =type2;
+  });
+}
 function updateTypeValue( value ){
+  // update page info
+  switch(value){
+    case 1:
+      updateInfo("Decimal" , "Binary");
+      break;
+    case 2:
+      updateInfo("Binary", "Decimal");
+      break;
+    case 3:
+      updateInfo("Decimal", "Hexadecimal");
+      break;
+    case 4:
+      updateInfo("Hexadecimal","Decimal");
+      break;
+    case 5:
+      updateInfo("Decimal" , "Octal");
+      break;
+    case 6:
+      updateInfo("Octal" , "Decimal");
+      break;
+    case 7:
+      updateInfo("Hexadecimal" , "Octal");
+      break;
+    case 8:
+      updateInfo("Octal" , "Hexadecimal");
+      break;
+  }
+  // update conversion type
   type = value;
 }
-
-// listen for DOM content loaded
-document.addEventListener("DOMContentLoaded", () => {
-  const submitBtn = document.getElementById("submit");
+// handle user input
+function processInput() {
   const input = document.getElementById("input");
   const output = document.getElementById("output");
-
-  // listen for user submit
-  submitBtn.addEventListener('click', () => {
-    processInput();
-  });
-
-  // listen for enter key press
-  input.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      processInput();
-    }
-  });
-
-  function processInput() {
-    const value = input.value;
-    switch (type) {
-      case 1:
-        output.value = DecimalToBinary(value);
-        break;
-      case 2:
-        output.value = BinaryToDecimal(value);
-        break;
-      case 3:
-        output.value = decimalToHexadecimal(value);
-        break;
-      case 4:
-        output.value = HexadecimalToDecimal(value);
-        break;
-      case 5:
-        output.value = DecimalToOctal(value);
-        break;
-      case 6:
-         output.value = OctalToDecimal(value);
-        break;
-      case 7:
-        output.value = HexadecimalToOctal(value);
-        break;
-      case 8:
-        output.value = OctalToHexadecimal(value);
-        break;
-    }
+  const value = input.value;
+  input.value = '';
+  switch (type) {
+    case 1:
+      output.value = DecimalToBinary(value);
+      break;
+    case 2:
+      output.value = BinaryToDecimal(value);
+      break;
+    case 3:
+      output.value = decimalToHexadecimal(value);
+      break;
+    case 4:
+      output.value = HexadecimalToDecimal(value);
+      break;
+    case 5:
+      output.value = DecimalToOctal(value);
+      break;
+    case 6:
+       output.value = OctalToDecimal(value);
+      break;
+    case 7:
+      output.value = HexadecimalToOctal(value);
+      break;
+    case 8:
+      output.value = OctalToHexadecimal(value);
+      break;
   }
-});
+}
 
-//manter click
-document.addEventListener('DOMContentLoaded', function() {
+// ON APP START
+// listen for DOM content loaded
+document.addEventListener("DOMContentLoaded", () => {
+  // define default conversion type
+  updateTypeValue(2);
+
+  // listen for conversion type change
   var listItems = document.querySelectorAll('.list-group-item');
-
   listItems.forEach(function(item) {
       item.addEventListener('click', function() {
           // Remove a classe 'active' de todos os elementos
@@ -179,6 +197,18 @@ document.addEventListener('DOMContentLoaded', function() {
           updateTypeValue(item.value);
       });
   });
+
+  // listen for user submit
+  const submitBtn = document.getElementById("submit");
+  submitBtn.addEventListener('click', () => {
+    processInput();
+  });
+
+  //listen for enter key press
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      processInput();
+    }
+  });
 });
-//
 
