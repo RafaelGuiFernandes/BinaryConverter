@@ -183,20 +183,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // listen for conversion type change
   var listItems = document.querySelectorAll('.list-group-item');
+  const inputElement = document.querySelector('#input');
+  const outputElement = document.querySelector('#output');
+
   listItems.forEach(function(item) {
       item.addEventListener('click', function() {
-          // Remove a classe 'active' de todos os elementos
+          // Remove the 'active' class from all elements
           listItems.forEach(function(el) {
               el.classList.remove('active');
           });
-          // Adicione a classe 'active' ao elemento clicado
+          // Add the 'active' class to the clicked element
           this.classList.add('active');
 
-          // atualizar tipo
+          // update type
           console.log( item.value );
           updateTypeValue(item.value);
+
+          // modify the value of the <input> element to empty
+          outputElement.value = '';
       });
   });
+
+  // listen for changes to the input element
+  inputElement.addEventListener('input', () => {
+      if (inputElement.value === '') {
+          outputElement.value = '';
+      }
+  });
+
+
+
 
   // listen for user submit
   const submitBtn = document.getElementById("submit");
@@ -211,10 +227,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // listen for swap conversion type
-  document.getElementById('swap').addEventListener('click',() => {
-    type = type %2 == 0 ? type - 1 : type + 1;
-    updateTypeValue( type );
-  })
+    // listen for swap conversion type
+    document.getElementById('swap').addEventListener('click',() => {
+      type = type %2 == 0 ? type - 1 : type + 1;
+      updateTypeValue( type );
+
+      // modify the value of the <input> element to empty
+      outputElement.value = '';
+  });
 });
+
 
