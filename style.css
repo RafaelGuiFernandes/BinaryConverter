@@ -5,11 +5,12 @@
     width: inherit;
 }
 .btn{
-    border: solid 2px black;
+    border: solid 2px rgb(187, 187, 187);
     border-radius: 0px;
     text-align: center !important;
     padding: 0px 6px;
     align-self: flex-end;
+    --bs-btn-hover-border-color: black
 }
 .list-group-flush{
     font-size: 12px;
@@ -57,4 +58,15 @@ footer{
     border: var(--bs-list-group) solid var(--bs-list-group);}
 .accordion-body {
     padding: var(--bs-accordion-body) var(--bs-accordion-body);
+}
+@media only screen and (max-device-width: 600px) {
+    .list-group-item {
+        position: relative;
+        display: block;
+        padding: var(--bs-list-group) var(--bs-list-group);
+        padding: 4px;
+        color: var(--bs-list-group-color);
+        text-decoration: none;
+        background-color: var(--bs-list-group-bg);
+        border: var(--bs-list-group) solid var(--bs-list-group);}
 }
