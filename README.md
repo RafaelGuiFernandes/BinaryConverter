@@ -1,2 +1,2 @@
 # BinaryConverter
-salve salve
+Application to convert numerical bases
