@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header class="p-3 text-white">
+        <div class="px-4 d-flex">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32   " fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 1 16 16">
+                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                </svg>
+                Basic Converter
+            </h2>
+        </div>
+    </header>
+    <main class="container-fluid">
+        <!-- Title -->
+        <div class="row justify-content-center">
+            <div class="row p-4 text-center">
+                <h4 > <span id="t1"></span> to <span id="t2"></span></h4>
+            </div>
+            <!-- Converter area -->
+            <div class="col-6 col-md-4">
+                <div class="form-group text-dark">
+                    <label for="input1">Enter <span id="t1"></span>:</label>
+                    <div class="row gap-3">
+                        <input type="text" class="col box-item " id="input" placeholder="">
+                        <button type="submit" id="submit" class="col col-md-2 box-item  btn">Converter</button>
+                    </div>
+                </div>
+                <div class="form-group text-dark">
+                    <label for="input2">Result in <span id="t2"></span>:</label>
+                    <div class="row gap-3">
+                        <input type="text" class="col box-item " id="output" placeholder="" readonly >
+                    </div>
+                </div>
+                <div class="row py-2">
+                    <button id="swap" type="submit" class="btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                            <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+                            </svg>
+                            Swap conversion: <span id="invertConversion"><span id="t1"></span> to <span id="t2"></span></span>
+                    </button>
+                </div>
+            </div>
+            <!-- Conversion Menu -->
+            <div class="col-4 mx-3 col-md-2"><!-- Example single danger button -->
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" value="1">Decimal to Binary</li>
+                    <li class="list-group-item" value="2">Binary to Decimal</li>
+                    <li class="list-group-item" value="3">Decimal to Hexadecimal</li>
+                    <li class="list-group-item" value="4">Hexadecimal to Decimal</li>
+                    <li class="list-group-item" value="5">Decimal to Octal</li>
+                    <li class="list-group-item" value="6">Octal to Decimal</li>
+                    <li class="list-group-item" value="7">Hexadecimal to Octal</li>
+                    <li class="list-group-item" value="8">Octal to Hexadecimal</li>                                    
+                </ul>
+                <!-- <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" id="ColorButton">
+                                Numbers
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"  data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="p-3 text-center">
+        <h6>Copyright 2023 - All Rights Reserved</h6>
+    </footer>
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
