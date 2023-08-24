@@ -17,11 +17,34 @@
 .collapsed{
     font-size: 14px;
 }
-.accordion-button{
-    font-size: 14px;
+.accordion-button {
+    font-size: 14px;   
+}
+.accordion-button:focus{
+    box-shadow: none;
+}
+.bs-accordion-body-padding-x {
+    -accordion-body-padding-xbs: none;
+}
+.accordion-button:not(.collapsed)::after {
+    background-image: var(--bs-accordion-btn-icon);
 }
 .list-group-item:hover,
 .list-group-item.active {
-    background-color: #00c2e4;
+    background-color: #8b8b8b;
 }
-
+#ColorButton{
+    background-color: rgb(26, 26, 26);
+    color: white;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+    color: var(--bs-list-group-color);
+    text-decoration: none;
+    background-color: var(--bs-list-group-bg);
+    border: var(--bs-list-group) solid var(--bs-list-group);}
+.accordion-body {
+    padding: var(--bs-accordion-body) var(--bs-accordion-body);
+}
