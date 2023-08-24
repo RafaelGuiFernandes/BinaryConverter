@@ -24,4 +24,13 @@
 .list-group-item.active {
     background-color: #00c2e4;
 }
-
+main{
+    min-height: 75vh;
+}
+footer{
+    /* position : absolute; */
+    bottom : 0;
+    height : 40px;
+    margin-top : 40px;
+    width: 100%;
+}
