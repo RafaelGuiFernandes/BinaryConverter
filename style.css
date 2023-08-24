@@ -32,7 +32,11 @@
 }
 .list-group-item:hover,
 .list-group-item.active {
-    background-color: #8b8b8b;
+    background-color: rgb(33, 37, 41);
+    color: white;
+}
+header{
+    background-color: rgb(33, 37, 41);
 }
 main{
     min-height: 75vh;
@@ -45,7 +49,7 @@ footer{
     width: 100%;
 }
 #ColorButton{
-    background-color: rgb(26, 26, 26);
+    background-color: rgb(33, 37, 41);
     color: white;
 }
 .list-group-item {
